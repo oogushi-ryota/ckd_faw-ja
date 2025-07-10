@@ -1,0 +1,166 @@
+<% const page='about'; %>
+<!DOCTYPE html>
+<html lang="ja">
+<%- include('../includes/_head.ejs', {
+  path: "../",
+  url: "/product/",
+  title: "関連商品 | コンパクトアーム CAW | CKD株式会社",
+  keywords: "コンパクトアーム,助力装置,バランサ,関連商品,バランサ,エアサプライ",
+  description: "コンパクトアームに関連する商品をご紹介します。"}); 
+  %>
+
+<body id="product">
+  <%- include('../includes/_header.ejs', {path: "../"}); %>
+  <main>
+    <section class="common-main-visual">
+      <h1 class="common-main-visual__title">関連商品</h1>
+      <p class="common-main-visual__lead">関連商品をご紹介します。</p>
+    </section>
+
+    <div class="l-inner">
+      <ol class="cm-breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li class="cm-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="https://www.ckd.co.jp/kiki/jp/" target="_blank">
+            <span itemprop="name">機器商品TOP</span>
+          </a>
+          <meta itemprop="position" content="1">
+        </li>
+        <li class="cm-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="../">
+            <span itemprop="name">コンパクトアーム</span>
+          </a>
+          <meta itemprop="position" content="2">
+        </li>
+        <li class="cm-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="#">
+            <span itemprop="name">関連商品</span>
+          </a>
+          <meta itemprop="position" content="3">
+        </li>
+      </ol>
+    </div>
+
+    <section class="product">
+      <div class="l-inner">
+        <h2 class="product__title">クリックで各商品の詳細を<br class="sp">ご覧いただけます</h2>
+        <ul class="product__link-list">
+          <li class="product__link common__content-link-btn__wrap">
+            <a class="common__content-link-btn" href="https://www.ckd.co.jp/kiki/jp/paw/">
+              <div class="product__link-block column">
+                <div class="product__link-text-blk">
+                  <h3 data-mh="ttl" class="product__link-main-text">
+                    パワフルアームPAWシリーズ
+                  </h3>
+                  <p class="product__link-lead-sub">
+                    PAWシリーズは、圧縮エアを用いた下方・前方からアプローチできる新しい方式のバランサ（重量補助機器）です。<br>
+                    最大80kgまでの重量物も簡単持ち上げ可能です。<br>
+                    多軸仕様で折りたたみでき収納時もコンパクト。<br>
+                    反転等複雑な作業にも使用可能です。
+                  </p>
+                </div>
+                <figure class="product__link-image">
+                  <img class="pc" src="../assets/images/product/link_img_01.jpg" alt="パワフルアームPAWシリーズ">
+                  <img class="sp" src="../assets/images/product/link_img_01.jpg" alt="パワフルアームPAWシリーズ">
+                </figure>
+              </div>
+              <div class="product__link-btn">詳しく見る</div>
+            </a>
+          </li>
+          <li class="product__link common__content-link-btn__wrap">
+            <a id="fawLink" class="common__content-link-btn" href="https://www.ckd.co.jp/kiki/jp/product/detail/1078/">
+              <div class="product__link-block column">
+                <div class="product__link-text-blk">
+                  <h3 data-mh="ttl" class="product__link-main-text">
+                    フレックスアームFAWシリーズ
+                  </h3>
+                  <p class="product__link-lead-sub">
+                    広い作業範囲を持ち、低天井エリアにも導入可能な定格<br>
+                    可搬質量50kgのエアバランサです。<br>
+                    これまで助力装置の導入をおきらめていた、狭く、天井の低い現場でも作業改善に貢献します。
+                  </p>
+                </div>
+                <figure class="product__link-image">
+                  <img class="pc" src="../assets/images/product/link_img_02.jpg" alt="フレックスアームFAWシリーズ">
+                  <img class="sp" src="../assets/images/product/link_img_02.jpg" alt="フレックスアームFAWシリーズ">
+                </figure>
+              </div>
+              <div class="product__link-btn">詳しく見る</div>
+            </a>
+          </li>
+          <li class="product__link common__content-link-btn__wrap">
+            <a class="common__content-link-btn" href="../assets/pdf/bbs_series.pdf"download>
+              <div class="product__link-block column">
+                <div class="product__link-text-blk">
+                  <h3 data-mh="ttl" class="product__link-main-text">
+                    吊り下げ式バランサユニットBBSシリーズ
+                  </h3>
+                  <p class="product__link-lead-sub">
+                    バランサ用の低摩擦シリンダ（ブレーキ付き）です。<br>
+                    シンプルかつ高い安全性で作業者にストレスを感じさせません。<br>
+                    お客様のあらゆる装置に搭載可能です。<br>
+                    ※自動バランスはありません。
+                  </p>
+                </div>
+                <figure class="product__link-image">
+                  <img class="pc" src="../assets/images/product/link_img_03.jpg" alt="吊り下げ式バランサユニットBBSシリーズ">
+                  <img class="sp" src="../assets/images/product/link_img_03.jpg" alt="吊り下げ式バランサユニットBBSシリーズ">
+                </figure>
+              </div>
+              <div class="product__link-btn">資料をダウンロードする：</div>
+            </a>
+          </li>
+        </ul>
+        <h3 class="product__other-title">その他関連商品</h3>
+        <ul class="product__link-list">
+          <li class="product__link common__content-link-btn__wrap">
+            <a id="asuLink" class="common__content-link-btn" href="https://www.ckd.co.jp/kiki/jp/product/detail/111/">
+              <div class="product__link-block">
+                <div class="product__link-text-blk">
+                  <h3 data-mh="ttl" class="product__link-main-text">
+                    圧縮空気キャリアブルエアサプライユニットASUシリーズ
+                  </h3>
+                  <p class="product__link-lead-sub">
+                    圧縮空気が得られない場所でもAC100V電源のみで、手軽にきれいなエアを供給できる小型コンプレッサーです。<br>
+                    キャリーケースに必要な機器が全て内蔵されているため簡単に持ち運びができます。<br>
+                    デザイン性に優れ、オフィス・研究ラボ・展示会・各種イベントなど、あらゆるシーンで活躍します。
+                  </p>
+                </div>
+                <figure class="product__link-image">
+                  <img class="" src="../assets/images/product/link_img_04.jpeg" alt="圧縮空気キャリアブルエアサプライユニットASUシリーズ">
+                </figure>
+              </div>
+              <div class="product__link-btn">詳しく見る</div>
+            </a>
+          </li>
+          <li class="product__link common__content-link-btn__wrap">
+            <a id="rpLink" class="common__content-link-btn" href="https://www.ckd.co.jp/kiki/jp/product/detail/395/">
+              <div class="product__link-block">
+                <div class="product__link-text-blk">
+                  <h3 data-mh="ttl" class="product__link-main-text">
+                    精密レギュレータRPシリーズ
+                  </h3>
+                  <p class="product__link-lead-sub">
+                    高精度圧力制御・圧力降下の小さい安定した流量特性があり、コンパクトサイズながら大きなリリーフ流量タイプです。<br>
+                    コンパクトアームCAWシリーズの制御に使用しております。
+                  </p>
+                </div>
+                <figure class="product__link-image">
+                  <img class="" src="../assets/images/product/link_img_05.jpeg" alt="精密レギュレータRPシリーズ">
+                </figure>
+              </div>
+              <div class="product__link-btn">詳しく見る</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <%- include('../includes/_footer.ejs', {path: "../"}); %>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+  <script src="../assets/js/index.js?20221206"></script>
+</body>
+
+</html>

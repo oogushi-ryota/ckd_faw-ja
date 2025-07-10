@@ -179,7 +179,7 @@
         display: inline-block;
         width: 100%;
         height: 100%;
-        background: rgba($color: #ECCDD3, $alpha: 0.73);
+        background: rgba($color: #FFC793, $alpha: 0.73);
         position: absolute;
         left: calc(10 * (100vw / 1920));
         bottom: calc(-10 * (100vw / 1920));
@@ -449,7 +449,7 @@
         content: "";
         width: 96%;
         height: 1.9rem;
-        background: rgba($color: #ECCDD3, $alpha: 0.67);
+        background: rgba($color: #FFC793, $alpha: 0.67);
         position: absolute;
         bottom: -.9rem;
         left: 0;
@@ -652,7 +652,7 @@
     }
   }
   .feature{
-    background: #ECCDD3;
+    background: #FFC793;
     padding: 12rem 0 9rem;
     @media (max-width: 767px){
       margin-top: 14rem 0 14rems;

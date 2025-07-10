@@ -250,14 +250,23 @@ const webpConvert = () => {
   return src(paths.images.srcWebp, {
     since: lastRun(webpConvert),
   })
-    .pipe(
-      plumber({
-        // エラーがあっても処理を止めない
-        errorHandler: notify.onError('Error: <%= error.message %>'),
-      })
-    )
-    .pipe(webp())
-    .pipe(dest(paths.images.distWebp));
+  .pipe(
+    plumber({
+      errorHandler: function (err) {
+        console.error('WebP変換エラーが発生：', err.message);
+        if (err.fileName) {
+          console.error('エラー発生ファイル:', err.fileName);
+        }
+        notify.onError({
+          title: 'WebP変換エラー',
+          message: '<%= error.message %>',
+        })(err);
+        this.emit('end');
+      }
+    })
+  )
+  .pipe(webp())
+  .pipe(dest(paths.images.distWebp));
 };
 
 // CSSファイルコピー（vendorsフォルダの中身はコンパイルしない

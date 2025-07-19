@@ -8,7 +8,6 @@
 #index{
   .main-visual{
     width: 100vw;
-    // min-height: calc(1200 * (100vh / 1920));
     overflow: hidden;
 
     @media (max-width: 1024px) {
@@ -42,7 +41,6 @@
     }
 
     &__title{
-      // width: 100%;
       width: calc(640 * (100vw / 1920));
       margin: 0 auto;
       padding-top: calc(240 * (100vw / 1920));
@@ -57,7 +55,6 @@
       }
     }
     &__image{
-      // width: 100%;
       width: calc(620 * (100vw / 1920));
       position: absolute;
       left: calc(40 * (100vw / 1920));
@@ -89,7 +86,6 @@
     &__problem-list{
       display: flex;
       justify-content: space-between;
-      // margin-top: calc(40 * (100vw / 1920));
 
       @media (max-width: 767px){
         padding: 0 2rem;
@@ -281,6 +277,8 @@
       display: flex;
       justify-content: space-between;
       text-align: center;
+      position: relative;
+      z-index: 2;
 
       @media (max-width: 767px){
         margin-top: 8rem;
@@ -311,41 +309,25 @@
       @media (max-width: 767px){
         font-size: 2.1rem;
       }
-
-      .top-obj {
-        width: calc(60 * (100vw / 1920));
-        margin-top: calc(5 * (100vw / 1920));
-
-        @media (max-width: 767px) {
-          width: 6.4rem;
-          margin-top: .8rem;
-        }
-      }
-    }
-
-    .bottom-obj {
-      width: calc(26 * (100vw / 1920));
-      margin: calc(16 * (100vw / 1920)) auto 0;
-
-      @media (max-width: 767px) {
-        width: 3.2rem;
-        margin-top: 2.4rem;
-      }
     }
 
     &__animation-box{
       width: 100%;
       height: calc(70 * (100vw / 1920));
-      background: #E0E0E0;
+      background: #e8dfc9;
       border: 1px solid #000;
-      border-radius: 1.2rem 1.2rem 0 0;
       display: block;
       margin-top: calc(-4 * (100vw / 1920));
       position: relative;
+      top: 0;
       transition: all .5s;
 
       @media (max-width: 767px){
         height: 10rem;
+      }
+
+      &.is-active {
+        top: -1rem;
       }
     }
     
@@ -374,15 +356,6 @@
         &:hover {
           .main-visual__animation-click {
             top: calc(39 * (100vw / 1920));
-          }
-
-          .main-visual__animation-box {
-            background-color: #000;
-          }
-
-          .main-visual__animation-text {
-            color: #fff;
-            animation: rotation-y .5s linear 1;
           }
         }
       }
@@ -594,7 +567,6 @@
     }
 
     &__item-caption{
-      // font-size: calc(22 * (100vw / 1920));
       font-size: 2.2rem;
       line-height: 1.5;
       text-align: center;
@@ -844,219 +816,45 @@
   }
 }
 
-// #index.tablet{
-//   @media (min-width: 768px){
-//     .main-visual{
-//       height: calc(1200 * (100vw / 1920));
-//       min-height: unset;
-//       // min-height: 800px;
-//       &__title{
-//         padding-top: calc(550 * (100vw / 1920));
-//       }
-//     }
-//     .main-visual{
-//       &__wrapper{
-//         width: calc(1400 * (100vw / 1920));
-//       }
-//       &__left-block{
-//         width: 50%;
-//         position: relative;
-//       }
-//       &__title{
-//         padding-top: calc(504 * (100vw / 1920));
-//         width: calc(555 * (100vw / 1920));
-//         position: relative;
-//         z-index: 2;
-//       }
-//       &__image{
-//         width: calc(723 * (100vw / 1920));
-//         position: absolute;
-//         left: calc(-105 * (100vw / 1920));
-//         top: calc(130 * (100vw / 1920));
-//       }
-//       &__right-block{
-//         width: 50%;
-//         padding-top: calc(80 * (100vw / 1920));
-//         padding-left: 0;
-//       }
-//       &__problem-list {
-//         margin-top: auto;
-//       }
-//       &__problem-item{
-//         width: calc(150 * (100vw / 1920));
-//         height: calc(120 * (100vw / 1920));
-//         font-size: calc(30 * (100vw / 1920));
-//         &:after{
-//           content: "";
-//           border-width: calc(18 * (100vw / 1920)) calc(18 * (100vw / 1920)) 0 0;
-//           bottom: calc(-18 * (100vw / 1920));
-//           right: calc(12 * (100vw / 1920));
-//         }
-//       }
-//       &__description{
-//         font-size: calc(28 * (100vw / 1920));
-//         margin-top: calc(50 * (100vw / 1920));
-//       }
-//       &__movie-wrap{
-//         margin-top: calc(38 * (100vw / 1920));
-//         &::after{
-//           content: "";
-//           left: calc(15 * (100vw / 1920));
-//           bottom: calc(-15 * (100vw / 1920));
-//         }
-//       }
-//       .video_btn {
-//         position: absolute;
-//         width: calc(80 * (100vw / 1920));
-//         z-index: 5;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         -webkit-transform: translate(-50%, -50%);
-//         -ms-transform: translate(-50%, -50%);
-//         cursor: pointer;
-//       }
-//       &__movie-txt{
-//         display: inline-flex;
-//         align-items: center;
-//         position: absolute;
-//         right: calc(-16.7 * (100vw / 1920));
-//         bottom: calc(14.2 * (100vw / 1920));
-//         z-index: 5;
-//         font-size: calc(22 * (100vw / 1920));
-//         font-weight: bold;
-//         background: #fff;
-//         letter-spacing: 0.06em;
-//         padding:  calc(15 * (100vw / 1920))  calc(10 * (100vw / 1920)) calc(15 * (100vw / 1920)) calc(17 * (100vw / 1920)) ;
-//         border: 2px solid #000;
-//         transition-duration: 0.3s;
-//         z-index: 2;
-//         &::after{
-//           content: "";
-//           display: inline-block;
-//           width: 0;
-//           height: 0;
-//           border-style: solid;
-//           border-width: calc(8.4 * (100vw / 1920)) 0 calc(8.4 * (100vw / 1920)) calc(14.62 * (100vw / 1920));
-//           border-color: transparent transparent transparent #000;
-//           margin-left: calc(12.7 * (100vw / 1920));
-//           transition-duration: 0.3s;
-//         }
-//         &:hover{
-//           background: #000;
-//           color: #fff;
-//           &::after{
-//             border-color: transparent transparent transparent #fff;
-//           }
-//         }
-//         cursor: pointer;
-//       }
-//       &__animation-links{
-//         margin-top: calc(88 * (100vw / 1920));
-//         display: flex;
-//         justify-content: space-between;
-//         text-align: center;
-//       }
-//       &__animation-item{
-//         width: 22.4%;
-//       }
-//       &__animation-click{
-//         font-size: calc(24 * (100vw / 1920));
-//         font-weight: bold;
-//         letter-spacing: 0.06em;
-//         text-align: center;
-//         display: inline-block;
-//         position: relative;
-//         &::after{
-//           content: "";
-//           display: inline-block;
-//           width: 0;
-//           height: 0;
-//           border-style: solid;
-//           border-width: calc(8 * (100vw / 1920)) calc(17 * (100vw / 1920)) 0 calc(17 * (100vw / 1920));
-//           border-color: #000 transparent transparent transparent;
-//           position: absolute;
-//           bottom: calc(-22 * (100vw / 1920));
-//           left: 50%;
-//           transform: translateX(-50%);
-//           -webkit-transform: translateX(-50%);
-//           -ms-transform: translateX(-50%);
-//         }
-//       }
-//       &__animation-box{
-//         width: 100%;
-//         height: calc(120 * (100vw / 1920));
-//         background: #E8DFC9;
-//         border: 1px solid #000;
-//         display: block;
-//         margin-top: calc(50 * (100vw / 1920));
-//         position: relative;
-//         // border-bottom: none;
-//         // hover後の電球
-//         &::before{
-//           content: "";
-//           width: calc(80 * (100vw / 1920));
-//           height: calc(50.95 * (100vw / 1920));
-//           background: url(../images/exmple_obj_03.svg) no-repeat center center / cover;
-//           position: absolute;
-//           top: 50%;
-//           left: 50%;
-//           transform: translate(-50%, -50%);
-//           -webkit-transform: translate(-50%, -50%);
-//           -ms-transform: translate(-50%, -50%);
-//           transition-duration: 0.3s;
-//           opacity: 0;
-//         } 
-//       }
-//       &__animation-lid{
-//         width: calc(31 * (100vw / 1920));
-//         height: calc(16.95 * (100vw / 1920));
-//         margin: 0 auto;
-//         border-bottom: 1px solid #000;
-//         border-left: 1px solid #000;
-//         border-right: 1px solid #000;
-//         // hover時の蓋、hoverで開閉
-//         &::before,&::after{
-//           content: "";
-//           display: inline-block;
-//           width: calc(47 * (100vw / 1920));
-//           height: calc(2 * (100vw / 1920));
-//           background: #000;
-//           opacity: 0;
-//           transition-duration: 0.2s;
-//         }
-//         &::before{
-//           position: absolute;
-//           top: 0;
-//           left: 0;
-//           transform-origin: left;
-//         }
-//         &::after{
-//           position: absolute;
-//           top: 0;
-//           right: 0;
-//           transform-origin: right;
-//         }
-//       }
-//       &__animation-text{
-//         font-size: calc(24 * (100vw / 1920));
-//         font-weight: bold;
-//         line-height: 1.44444;
-//         position: absolute;
-//         position: absolute;
-//         top: 0;
-//         left: 50%;
-//         transform: translateX(-50%);
-//         -webkit-transform: translateX(-50%);
-//         -ms-transform: translateX(-50%);
-//         width: 100%;
-//         height: 100%;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         padding-top: calc(14 * (100vw / 1920));
-//         transition-duration: 0.3s;
-//       }
-//     }
-//   }
-// }
+.armwrap {
+  margin-top: 4rem;
+  padding-top: 8rem;
+  position: relative;
+}
+
+.arm {
+  font-weight: bold;
+  border-radius: 8px;
+  white-space: nowrap;
+	position: absolute; /* JSで操作しやすく */
+	top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+	transition: all 0.5s ease; /* 移動をスムーズに */
+}
+
+.armline {
+  background: #eee;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+#arm::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #333;
+  transform: translateY(-50%) rotate(90deg);
+  transition: width 0.3s ease;
+  transform-origin: left;
+}
+
+.arm--line::after {
+  width: 80px !important; /* 伸びる長さはここで調整 */
+}

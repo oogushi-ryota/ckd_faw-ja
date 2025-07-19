@@ -4,12 +4,6 @@ $(function () {
   var isiPad = (ua.indexOf('ipad') > -1);
   var isAndroidTablet = (ua.indexOf('android') > -1) && (ua.indexOf('mobile') == -1);
   var agent = window.navigator.userAgent.toLowerCase()
-  // if (ua.indexOf('ipad') > -1
-  //   || ua.indexOf('macintosh') > -1 && 'ontouchend' in document) {
-  //   // iPad用の処理
-  //   $("meta[name='viewport']").attr('content', 'width=1400');
-  //   $("body").addClass("tablet");
-  // }
   if (isiPad || ua.indexOf('macintosh') > -1 && 'ontouchend' in document) {
     $("body").addClass("tablet");
     if (agent.indexOf("chrome") != -1) {
@@ -29,7 +23,6 @@ $(function () {
 });
 $(function () {
   var winScrollTop;
-  // var videoElement = document.getElementsByTagName("video");
   $('.common__js_modal_open').each(function () {
     $(this).on('click', function () {
       //スクロール位置を取得
@@ -42,7 +35,6 @@ $(function () {
       $(".common__movie-wrap").addClass('show');
       var modalChild = $(modal).find("video");
       $(modalChild).attr("src", videoId);
-      // $(modalChild).attr("poster", posterPath);
       // 動画が空の時にカミングスーンにする。
       if (modalChild.is('[src=""]')) {
         $(modal).find(".common__movie-container").addClass('common__modal__commingsoon');
@@ -52,23 +44,6 @@ $(function () {
       return false;
     });
   });
-
-  
-
-  // let loc = location.pathname.replace(/\/+$/, "").split('/').pop();
-  // let dir = loc.substring(0, loc.lastIndexOf('/')) + '/';
-
-
-
-
-  // $('.js-lang-button').each(function () {
-  //     //スクロール位置を取得
-  //     var lang = $(this).data('lang');
-  //     $(this).attr("href", "/kiki/" + lang + "/paw" + dir);
-  // });
-
-
-
 
   let url = window.location.href;
   $('.js-lang-button').each(function () {
@@ -88,24 +63,11 @@ $(function () {
   
   });
 
-  // if(url.search(/\/jp\//) !== -1) {
-  //   // 日本語の時
-  //   let enUrl = url.replace('/jp/', '/en/');
-  //   let scUrl = url.replace('/jp/', '/sc/');
-  //   enBtn.attr('href', enUrl);
-  //   scUrl.attr('href', scUrl);
-  // }else if(url.search(/\/en\//) !== -1) {
-  //   langUrl = url.replace('/en/', '/jp/');
-  //   $('p#language a').attr('href', langUrl);
-  // }
-
-
   $('.common__js_modal_close').on('click', function () {
     $('.common__js_modal').fadeOut();
     $(".common__movie-play-tumb").show();
     $(".common__movie-wrap").removeClass('show');
     $(".common__js_modal video").attr("src", "");
-    // $(".common__js_modal video").attr("poster", "");
     $('body,html').stop().animate({ scrollTop: winScrollTop }, 100);
     return false;
   });
@@ -263,3 +225,55 @@ updateLinkUrls();
 
 // ウィンドウリサイズ時に実行
 window.addEventListener('resize', updateLinkUrls);
+
+
+const triggers = document.querySelectorAll('.main-visual__animation-trigger');
+const arm = document.getElementById('arm');
+const armwrap = document.querySelector('.armwrap');
+
+const initialLeft = '50%';
+
+triggers.forEach(trigger => {
+  trigger.addEventListener('mouseenter', () => {
+    const rect = trigger.getBoundingClientRect();
+    const parentRect = armwrap.getBoundingClientRect();
+
+    const centerLeft = rect.left - parentRect.left + rect.width / 2;
+
+    // 横方向のみ移動
+    arm.style.left = `${centerLeft}px`;
+    arm.classList.remove('arm--line');
+
+    // 他の is-active を除去
+    document.querySelectorAll('.main-visual__animation-box.is-active').forEach(el => {
+      el.classList.remove('is-active');
+    });
+
+    // アニメーション移動完了後に処理
+    arm.addEventListener('transitionend', function handler() {
+      arm.classList.add('arm--line');
+
+      // 0.5秒後に .is-active を付与
+      const box = trigger.querySelector('.main-visual__animation-box');
+      if (box) {
+        setTimeout(() => {
+          box.classList.add('is-active');
+        }, 300); // ← ここで0.5秒遅延
+      }
+
+      arm.removeEventListener('transitionend', handler);
+    }, { once: true });
+  });
+
+  trigger.addEventListener('mouseleave', () => {
+    arm.style.left = initialLeft;
+    arm.style.transform = 'translateX(-50%)';
+    arm.classList.remove('arm--line');
+
+    // .is-active 削除
+    const box = trigger.querySelector('.main-visual__animation-box');
+    if (box) {
+      box.classList.remove('is-active');
+    }
+  });
+});

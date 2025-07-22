@@ -43,7 +43,7 @@
     &__title{
       width: calc(640 * (100vw / 1920));
       margin: 0 auto;
-      padding-top: calc(240 * (100vw / 1920));
+      padding-top: calc(430 * (100vw / 1920));
       position: relative;
       z-index: 2;
 
@@ -55,10 +55,10 @@
       }
     }
     &__image{
-      width: calc(620 * (100vw / 1920));
+      width: calc(1200 * (100vw / 1920));
       position: absolute;
-      left: calc(40 * (100vw / 1920));
-      top: calc(100 * (100vw / 1920));
+      left: calc(-280 * (100vw / 1920));
+      top: calc(56 * (100vw / 1920));
 
       @media (max-width: 767px){
         width: 40rem;

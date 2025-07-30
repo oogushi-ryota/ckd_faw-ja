@@ -43,7 +43,7 @@
     &__title{
       width: calc(640 * (100vw / 1920));
       margin: 0 auto;
-      padding-top: calc(430 * (100vw / 1920));
+      padding-top: calc(526 * (100vw / 1920));
       position: relative;
       z-index: 2;
 
@@ -55,15 +55,15 @@
       }
     }
     &__image{
-      width: calc(1200 * (100vw / 1920));
+      width: calc(1120 * (100vw / 1920));
       position: absolute;
-      left: calc(-280 * (100vw / 1920));
-      top: calc(56 * (100vw / 1920));
+      left: calc(-260 * (100vw / 1920));
+      top: calc(107 * (100vw / 1920));
 
       @media (max-width: 767px){
-        width: 40rem;
-        left: 0;
-        top: 37.3rem;
+        width: 80rem;
+        left: -26rem;
+        top: 36.3rem;
       }
     }
 
@@ -404,24 +404,27 @@
 
   .example{
     padding: 18rem 0 8.5rem;
+
     @media (max-width: 767px){
-      padding: 18rem 0 15rem;
+      padding: 12rem 0;
     }
+
     &__title-wrap{
       display: flex;
       justify-content: center;
-      @media (max-width: 767px){
-      }
     }
+
     &__title{
       font-size: 4.8rem;
       font-weight: 900;
       letter-spacing: 0.1em;
+      text-align: center;
       position: relative;
-      margin-left: .7rem;
+
       @media (max-width: 767px){
         font-size: 3.6rem;
       }
+
       // タイトルの下線
       &::before{
         content: "";
@@ -432,9 +435,8 @@
         bottom: -.9rem;
         left: 0;
         z-index: -1;
-        @media (max-width: 767px){
-        }
       }
+
       // 左の装飾
       &::after{
         content: "";
@@ -442,20 +444,26 @@
         height: 4.7rem;
         background: url(../images/exmple_ttl_obj_01.svg) no-repeat center center / contain;
         position: absolute;
-        left: -3.8rem;
+        left: 9rem;
         top: -2.7rem;
-        @media (max-width: 767px){
+
+        @media (max-width: 767px) {
+          left: 6rem;
+          top: -3.7rem;
         }
       }
+
       &--l{
         font-size: 6rem;
         position: relative;
         z-index: 2;
         letter-spacing: 0.1em;
         font-weight: 900;
+
         @media (max-width: 767px){
           font-size: 5rem;
         }
+
         // 右側の装飾
         &::after{
           content: "";
@@ -465,6 +473,7 @@
           position: absolute;
           right: -5rem;
           top: -1.9rem;
+
           @media (max-width: 767px){
             right: -4.7rem;
             top: -3rem;
@@ -472,26 +481,32 @@
         }
       }
     }
+
     &__lead{
-      margin-top: 5rem;
+      margin-top: 5.6rem;
       text-align: center;
       font-size: 2.6rem;
       letter-spacing: 0.06em;
-      line-height: 1.4em;
+      line-height: 1.8em;
       font-weight: 500;
 
       @media (max-width: 767px){
+        font-size: 2.8rem;
         margin-top: 4.2rem;
-        font-size: 2.4rem;
+        padding: 0 4.8rem;
       }
+
       &--l{
         font-size: 3.2rem;
         font-weight: 600;
         display: inline-block;
         position: relative;
-        @media (max-width: 767px){
-          
+
+        @media (max-width: 767px) {
+          font-size: 4rem;
+          margin-top: 1rem;
         }
+
         &::before{
           content: "";
           width: 97%;
@@ -506,99 +521,131 @@
         }
       }
     }
+
     &__list{
-      display: flex;
-      justify-content: space-between;
-      margin-top: 13rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 5.6rem;
+
       @media (max-width: 767px){
-        padding: 0 7rem;
-        flex-wrap: wrap;
+        display: block;
+        padding: 0 4.8rem;
       }
     }
-    &__item{
-      width: 28rem;
-      border: .4rem solid #000;
-      background: #E8DFC9;
+
+    &__list-item {
+      font-size: 2rem;
+      letter-spacing: .02em;
+      line-height: 2;
+      padding-left: 2rem;
       position: relative;
 
-      @media (max-width: 767px){
-        width: 28rem;
-
-        &:not(:last-child) {
-          margin-bottom: 3rem;
-        }
+      @media (max-width: 767px) {
+        font-size: 2.8rem;
       }
 
-      &__link{
-        width: 100%;
-        height: 100%;
-        display: inline-block;
-        position: relative;
-        
-        &::after{
-          content: "解決事例を見る";
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: calc(32 * (100vw / 1920));
-          color: #fff;
-          background: rgba($color: #000000, $alpha: 0.43);
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          font-weight: bold;
-          letter-spacing: 0.06em;
-          transition-duration: 0.3s;
-          visibility: hidden;
-          opacity: 0;
-        }
-        
-        &:hover{
-          &::after{
-            opacity: 1;
-            visibility: visible;
-          }
-        }
+      &::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        background-color: #ffc793;
+        border-radius: 100vmax;
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
       }
     }
 
-    &__item-image {
-      aspect-ratio: 238 / 180;
-      transition-duration: 0.3s;
+    // &__item{
+    //   width: 28rem;
+    //   border: .4rem solid #000;
+    //   background: #E8DFC9;
+    //   position: relative;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
-      }
-    }
+    //   @media (max-width: 767px){
+    //     width: 28rem;
 
-    &__item-caption{
-      font-size: 2.2rem;
-      line-height: 1.5;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: calc(78 * (100vw / 1920));
-      transition-duration: .3s;
+    //     &:not(:last-child) {
+    //       margin-bottom: 3rem;
+    //     }
+    //   }
+
+    //   &__link{
+    //     width: 100%;
+    //     height: 100%;
+    //     display: inline-block;
+    //     position: relative;
+        
+    //     &::after{
+    //       content: "解決事例を見る";
+    //       display: flex;
+    //       justify-content: center;
+    //       align-items: center;
+    //       font-size: calc(32 * (100vw / 1920));
+    //       color: #fff;
+    //       background: rgba($color: #000000, $alpha: 0.43);
+    //       position: absolute;
+    //       top: 0;
+    //       left: 0;
+    //       width: 100%;
+    //       height: 100%;
+    //       font-weight: bold;
+    //       letter-spacing: 0.06em;
+    //       transition-duration: 0.3s;
+    //       visibility: hidden;
+    //       opacity: 0;
+    //     }
+        
+    //     &:hover{
+    //       &::after{
+    //         opacity: 1;
+    //         visibility: visible;
+    //       }
+    //     }
+    //   }
+    // }
+
+    // &__item-image {
+    //   aspect-ratio: 238 / 180;
+    //   transition-duration: 0.3s;
+
+    //   img {
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: cover;
+    //     object-position: top;
+    //   }
+    // }
+
+    // &__item-caption{
+    //   font-size: 2.2rem;
+    //   line-height: 1.5;
+    //   text-align: center;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   min-height: calc(78 * (100vw / 1920));
+    //   transition-duration: .3s;
       
-      @media (max-width: 767px){
-        font-size: 2.3rem;
-        min-height: 9.2rem;
-      }
-    }
+    //   @media (max-width: 767px){
+    //     font-size: 2.3rem;
+    //     min-height: 9.2rem;
+    //   }
+    // }
+
     &__link-btn-wrap{
       width: 54rem;
       height: 9.6rem;
       margin: 13.5rem auto 0;
+
       @media (max-width: 767px){
         margin-top: 8rem;
       }
     }
+
     &__link-btn{
       font-size: 3rem;
       font-weight: bold;
@@ -700,21 +747,25 @@
   }
   .link-section{
     padding: 13.2rem 0 13.1rem;
+
     @media (max-width: 767px){
       padding: 11.4rem 0 11.6rem;
     }
+
     &__banner-list{
       display: flex;
       justify-content: center;
+
       @media (max-width: 767px){
         display: block;
       }
     }
+
     &__banner{
-      // width: 58.7rem;
       width: 100%;
       height: 22.7rem;
       margin: 0 1.34rem;
+
       @media (max-width: 767px){
         margin: 0 auto 2.5rem;
       }
@@ -728,31 +779,36 @@
 
     &__banner-text-block{
       padding-left: 4rem;
-      @media (max-width: 767px){
 
+      @media (max-width: 767px) {
+        padding: 0 2rem;
       }
     }
+
     &__banner-ttl{
       font-size: 2.8rem;
       letter-spacing: -0.06em;
+
       @media (max-width: 767px){
         font-size: 3.2rem;
+        line-height: 120%;
       }
     }
+
     &__banner-text{
       font-size: 2rem;
       line-height: 1.444;
       margin-top: 2.2rem;
+
       @media (max-width: 767px){
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
     }
+
     &__banner-img-block{
-      // flex: 0 0 20.8rem;
       flex: 0 0 40rem;
       height: 100%;
-      @media (max-width: 767px){
-      }
+
       img{
         height: 100%;
         object-fit: cover;

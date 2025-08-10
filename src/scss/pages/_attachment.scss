@@ -1,21 +1,25 @@
 #attachment{
   .attachment{
     padding-bottom: 19.5rem;
+
     @media (max-width: 767px){
       padding-bottom: 12.5rem;
     }
+
     &__lead{
       font-size: 2.4rem;
       font-weight: 400;
       margin-top: 4rem;
       text-align: center;
       line-height: 1.7777;
+
       @media (max-width: 767px){
         margin-top: 6rem;
         font-size: 2.8rem;
         text-align: left;
       }
     }
+
     &__title{
       font-size: 5rem;
       text-align: center;
@@ -24,16 +28,19 @@
       -webkit-text-stroke: 0.1rem #000;
       text-stroke: 0.1rem #000;
       margin-top: 5.5rem;
+
       @media (max-width: 767px){
         font-size: 4rem;
         margin-top: 6.5rem;
       }
     }
+
     &__link-list{
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       margin-top: 4.1rem;
+
       @media (max-width: 767px){
         display: block;
         margin-top: 6.4rem;
@@ -79,40 +86,41 @@
           background: #fff;
         }
       }
+
       a{
         display: block;
         border: 2px solid #000;
         height: 100%;
       }
     }
+
     &__link-image{
       width: 24.8rem;
       flex: 0 0 24.8rem;
-      @media (max-width: 767px){
-      }
+
       img{
         width: 100%;
         height: 100%;
         object-fit: cover;
-        @media (max-width: 767px){
-        }
       }
     }
+
     &__link-flex-block{
       display: flex;
       height: 100%;
-      @media (max-width: 767px){
-      }
     }
+
     &__link-text-blk{
-      padding: 1.1rem 0 1.6rem 2.2rem;
+      padding: 1.1rem 1.6rem 2.2rem;
       background: #fff;
       width: calc(100% - 17.6rem);
       transition-duration: 0.3s;
+
       @media (max-width: 767px){
         padding: 1.8rem 0 1.6rem 1.8rem;
       }
     }
+
     &__link-main-text{
       font-size: 2.8rem;
       font-weight: bold;

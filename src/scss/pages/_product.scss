@@ -113,14 +113,13 @@
     }
 
     &__link-text-blk{
-      padding: 2.8rem 2.2rem 3.6rem 3.4rem;
+      padding: 2.8rem 2.2rem;
       background: #fff;
       width: calc(100% - 17.6rem);
       border-right: 2px solid #000;
       background: #E8DFC9;
 
       @media (max-width: 767px){
-        padding: 2.8rem 2.2rem 3.6rem 2.2rem;
         width: 100%;
       }
     }

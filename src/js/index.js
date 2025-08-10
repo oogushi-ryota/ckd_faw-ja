@@ -156,8 +156,8 @@ function updateLinkUrls() {
   var links = [
     {
       id: 'downloadLink', 
-      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/1077/',
-      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/1077/'
+      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/1078/',
+      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/1078/'
     },
     {
       id: 'fawLink', 
@@ -171,8 +171,8 @@ function updateLinkUrls() {
     },
     {
       id: 'rpLink', 
-      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/395/',
-      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/395/'
+      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/412/',
+      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/412/'
     },
     // 他のリンクも同様に追加可能
   ];
@@ -233,32 +233,50 @@ const armwrap = document.querySelector('.armwrap');
 
 const initialLeft = '50%';
 
+// 追加：現在のホバー対象と保留中タイマー
+let currentTrigger = null;
+let pendingTimerId = null;
+
 triggers.forEach(trigger => {
   trigger.addEventListener('mouseenter', () => {
+    currentTrigger = trigger;                 // ← 今の対象を記録
+    if (pendingTimerId) {
+      clearTimeout(pendingTimerId);           // ← 古い遅延処理をキャンセル
+      pendingTimerId = null;
+    }
+
     const rect = trigger.getBoundingClientRect();
     const parentRect = armwrap.getBoundingClientRect();
-
     const centerLeft = rect.left - parentRect.left + rect.width / 2;
 
     // 横方向のみ移動
     arm.style.left = `${centerLeft}px`;
     arm.classList.remove('arm--line');
 
-    // 他の is-active を除去
+    // 他の is-active を除去（まずは全消し）
     document.querySelectorAll('.main-visual__animation-box.is-active').forEach(el => {
       el.classList.remove('is-active');
     });
 
     // アニメーション移動完了後に処理
     arm.addEventListener('transitionend', function handler() {
+      // まだ同じトリガー上にいるか確認
+      if (currentTrigger !== trigger) {
+        arm.removeEventListener('transitionend', handler);
+        return;
+      }
+
       arm.classList.add('arm--line');
 
-      // 0.5秒後に .is-active を付与
+      // 0.5秒後に .is-active を付与（必要なら 300 に戻してください）
       const box = trigger.querySelector('.main-visual__animation-box');
       if (box) {
-        setTimeout(() => {
-          box.classList.add('is-active');
-        }, 300); // ← ここで0.5秒遅延
+        pendingTimerId = setTimeout(() => {
+          if (currentTrigger === trigger) {   // ← 最終確認
+            box.classList.add('is-active');
+          }
+          pendingTimerId = null;
+        }, 300);
       }
 
       arm.removeEventListener('transitionend', handler);
@@ -266,14 +284,20 @@ triggers.forEach(trigger => {
   });
 
   trigger.addEventListener('mouseleave', () => {
+    // このトリガーから離れたなら current を解除
+    if (currentTrigger === trigger) currentTrigger = null;
+
+    if (pendingTimerId) {
+      clearTimeout(pendingTimerId);
+      pendingTimerId = null;
+    }
+
     arm.style.left = initialLeft;
     arm.style.transform = 'translateX(-50%)';
     arm.classList.remove('arm--line');
 
-    // .is-active 削除
+    // .is-active を念のため削除
     const box = trigger.querySelector('.main-visual__animation-box');
-    if (box) {
-      box.classList.remove('is-active');
-    }
+    if (box) box.classList.remove('is-active');
   });
 });

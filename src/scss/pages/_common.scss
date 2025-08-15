@@ -3,8 +3,6 @@
 // .common__link-btn-overlapに横幅と縦の幅を指定する
 .common__link-btn-overlap{
   position: relative;
-  // width: 54rem;
-  // height: 9.6rem;
 }
 // ボタンないのレイアウトがページによって違うためアニメーションだけ作成する
 .common__link-btn-overlap-btn{
@@ -17,25 +15,32 @@
   left: 0;
   transition-duration: 0.3s;
   border: 2px solid #000;
+
   &.common__link-btn-overlap-btn--white{
     background: #fff;
+
     &:hover{
       background: #000;
     }
   }
-  &.common__link-btn-overlap-btn--center{
+
+  &.co
+  mmon__link-btn-overlap-btn--center{
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
    &:hover{
     transform: translateY(0.6rem) translateX(0.6rem);
     background: #000;
     color: #fff;
    }
+
    &:hover + .common__link-btn-bg{
     background: unset;
    }
+
    &.common-arrow{
     &:after{
       content: "";
@@ -48,6 +53,7 @@
       transition-duration: 0.3s;
     }
    }
+
    &.-arrow{
     &:hover{
       &::after{
@@ -151,17 +157,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   @media (max-width: 767px){
     min-height: 26.7rem;
     height: auto;
     margin-top: 10rem;
   }
+
   &.common-main-visual--showroom{
     height: auto;
+
     .common-main-visual__title{
       padding: calc(30 * (100vw / 1920)) 0;
     }
   }
+
   &::before{
     content: "";
     width: 100%;
@@ -171,10 +181,12 @@
     left: 0;
     background: #F3EFE4;
     position: absolute;
+
     @media (max-width: 767px){
       height: 3rem;
     }
   }
+
   &__title{
     font-size: calc(60 * (100vw / 1920));
     font-weight: 900;
@@ -187,15 +199,17 @@
       font-size: 4.4rem;
       -webkit-text-stroke: 0.15rem #000;
       text-stroke: 0.15rem #000;
+      line-height: 1.4;
     }
+
     &.common-main-visual__title--small{
       font-size: calc(55 * (100vw / 1920));
       @media (max-width: 767px){
         font-size: 3.2rem;
       }
     }
-
   }
+
   &__lead{
     font-size: calc(26 * (100vw / 1920));
     font-weight: 400;
@@ -203,8 +217,10 @@
     margin-top: calc(6 * (100vw / 1920));
     text-align: center;
     line-height: 1.5384;
+
     @media (max-width: 767px){
       font-size: 2.4rem;
+      padding: 0 2rem;
     }
   }
 }

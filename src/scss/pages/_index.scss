@@ -282,7 +282,7 @@
       z-index: 2;
 
       @media (max-width: 767px){
-        margin-top: 8rem;
+        margin-top: 7rem;
       }
     }
 
@@ -304,6 +304,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      // top: -1rem;
       top: 0;
       transition: all .5s;
 
@@ -318,13 +319,15 @@
       background: #e8dfc9;
       border: 1px solid #000;
       display: block;
-      margin-top: calc(-4 * (100vw / 1920));
+      // margin-top: calc(-4 * (100vw / 1920));
+      margin-top: calc(10 * (100vw / 1920));
       position: relative;
       top: 0;
       transition: all .5s;
 
       @media (max-width: 767px){
         height: 10rem;
+        margin-top: calc(4 * (100vw / 375));
       }
 
       &.is-active {
@@ -895,8 +898,12 @@
 
 .armwrap {
   margin-top: 2rem;
-  padding-top: 4rem;
+  padding-top: 2.4rem;
   position: relative;
+
+  @media (max-width: 767px) {
+    padding-top: 1.4rem;
+  }
 }
 
 .arm {
@@ -906,7 +913,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 	position: absolute; /* JSで操作しやすく */
-	top: 10%;
+	top: 12%;
   left: 57%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);

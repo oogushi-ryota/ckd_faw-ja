@@ -160,9 +160,9 @@ function updateLinkUrls() {
       desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/1078/'
     },
     {
-      id: 'fawLink', 
-      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/1078/',
-      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/1078/'
+      id: 'cawLink', 
+      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/1077/',
+      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/1077/'
     },
     {
       id: 'asuLink', 
@@ -171,8 +171,18 @@ function updateLinkUrls() {
     },
     {
       id: 'rpLink', 
+      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/395/',
+      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/395/'
+    },
+    {
+      id: 'atLink', 
       mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/412/',
       desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/412/'
+    },
+    {
+      id: 'abpLink', 
+      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/411/',
+      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/411/'
     },
     // 他のリンクも同様に追加可能
   ];

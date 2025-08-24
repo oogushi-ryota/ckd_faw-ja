@@ -27,7 +27,7 @@
         <h2 class="attachment__title">アタッチメントの種類</h2>
         <ul class="attachment__link-list">
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail01/">
+            <a data-target="modal01" class="common__content-link-btn common__js_modal_open" href="">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">
@@ -40,10 +40,11 @@
                   <img src="../assets/images/attachment/link_img_01.jpg" alt="">
                 </figure>
               </div>
+              <div class="attachment__link-btn">動画はこちら</div>
             </a>
           </li>
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail02/">
+            <a data-target="modal02" class="common__content-link-btn common__js_modal_open" href="">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">袋吸着用</h3>
@@ -53,10 +54,11 @@
                   <img src="../assets/images/attachment/link_img_02.jpg" alt="">
                 </figure>
               </div>
+              <div class="attachment__link-btn">動画はこちら</div>
             </a>
           </li>
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail03/">
+            <a data-target="modal03" class="common__content-link-btn common__js_modal_open" href="">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">段ボール吸着用</h3>
@@ -66,10 +68,11 @@
                   <img src="../assets/images/attachment/link_img_03.jpg" alt="">
                 </figure>
               </div>
+              <div class="attachment__link-btn">動画はこちら</div>
             </a>
           </li>
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail04/">
+            <span class="common__content-link-btn no-movie">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">一斗缶用吸着用</h3>
@@ -79,10 +82,10 @@
                   <img src="../assets/images/attachment/link_img_04.jpg" alt="">
                 </figure>
               </div>
-            </a>
+            </span>
           </li>
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail05/">
+            <a data-target="modal04" class="common__content-link-btn common__js_modal_open" href="">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">一斗缶用フック</h3>
@@ -92,10 +95,11 @@
                   <img src="../assets/images/attachment/link_img_05.jpg" alt="">
                 </figure>
               </div>
+              <div class="attachment__link-btn">動画はこちら</div>
             </a>
           </li>
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail06/">
+            <span class="common__content-link-btn no-movie">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">ロール内径クランプ用</h3>
@@ -108,10 +112,10 @@
                   <img src="../assets/images/attachment/link_img_06.jpg" alt="">
                 </figure>
               </div>
-            </a>
+            </span>
           </li>
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail06/">
+            <a data-target="modal05" class="common__content-link-btn common__js_modal_open" href="">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">コンテナ用クランプ</h3>
@@ -121,10 +125,11 @@
                   <img src="../assets/images/attachment/link_img_07.jpg" alt="">
                 </figure>
               </div>
+              <div class="attachment__link-btn">動画はこちら</div>
             </a>
           </li>
           <li class="attachment__link common__content-link-btn__wrap">
-            <a class="common__content-link-btn" href="./detail06/">
+            <a data-target="modal06" class="common__content-link-btn common__js_modal_open" href="">
               <div class="attachment__link-flex-block">
                 <div class="attachment__link-text-blk">
                   <h3 class="attachment__link-main-text">マグネット吸着</h3>
@@ -137,6 +142,7 @@
                   <img src="../assets/images/attachment/link_img_08.jpg" alt="">
                 </figure>
               </div>
+              <div class="attachment__link-btn">動画はこちら</div>
             </a>
           </li>
         </ul>
@@ -146,8 +152,72 @@
     </section>
   </main>
   <%- include('../includes/_footer.ejs', {path: "../"}); %>
-
-
+  <div id="modal01" class="common__modal common__js_modal">
+    <div class="common__modal_bg common__js_modal_close"></div>
+    <div class="common__modal-content">
+      <div class="common__movie-wrap">
+        <div class="common__movie-container">
+          <%- include('../includes/component/_movie_youtube.ejs', {videoId: ""}); %>
+        </div>
+        <div class="common__close common__js_modal_close"></div>
+      </div>
+    </div>
+  </div>
+  <div id="modal02" class="common__modal common__js_modal">
+    <div class="common__modal_bg common__js_modal_close"></div>
+    <div class="common__modal-content">
+      <div class="common__movie-wrap">
+        <div class="common__movie-container">
+          <%- include('../includes/component/_movie_youtube.ejs', {videoId: ""}); %>
+        </div>
+        <div class="common__close common__js_modal_close"></div>
+      </div>
+    </div>
+  </div>
+  <div id="modal03" class="common__modal common__js_modal">
+    <div class="common__modal_bg common__js_modal_close"></div>
+    <div class="common__modal-content">
+      <div class="common__movie-wrap">
+        <div class="common__movie-container">
+          <%- include('../includes/component/_movie_youtube.ejs', {videoId: ""}); %>
+        </div>
+        <div class="common__close common__js_modal_close"></div>
+      </div>
+    </div>
+  </div>
+  <div id="modal04" class="common__modal common__js_modal">
+    <div class="common__modal_bg common__js_modal_close"></div>
+    <div class="common__modal-content">
+      <div class="common__movie-wrap">
+        <div class="common__movie-container">
+          <%- include('../includes/component/_movie_youtube.ejs', {videoId: ""}); %>
+        </div>
+        <div class="common__close common__js_modal_close"></div>
+      </div>
+    </div>
+  </div>
+  <div id="modal05" class="common__modal common__js_modal">
+    <div class="common__modal_bg common__js_modal_close"></div>
+    <div class="common__modal-content">
+      <div class="common__movie-wrap">
+        <div class="common__movie-container">
+          <%- include('../includes/component/_movie_youtube.ejs', {videoId: ""}); %>
+        </div>
+        <div class="common__close common__js_modal_close"></div>
+      </div>
+    </div>
+  </div>
+  <div id="modal06" class="common__modal common__js_modal">
+    <div class="common__modal_bg common__js_modal_close"></div>
+    <div class="common__modal-content">
+      <div class="common__movie-wrap">
+        <div class="common__movie-container">
+          <%- include('../includes/component/_movie_youtube.ejs', {videoId: ""}); %>
+        </div>
+        <div class="common__close common__js_modal_close"></div>
+      </div>
+    </div>
+  </div>
   
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>

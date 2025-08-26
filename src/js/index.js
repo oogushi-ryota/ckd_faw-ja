@@ -241,7 +241,7 @@ const triggers = document.querySelectorAll('.main-visual__animation-trigger');
 const arm = document.getElementById('arm');
 const armwrap = document.querySelector('.armwrap');
 
-const initialLeft = '50%';
+const initialLeft = '61%';
 
 // 追加：現在のホバー対象と保留中タイマー
 let currentTrigger = null;

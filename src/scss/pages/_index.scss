@@ -907,38 +907,38 @@
 }
 
 .arm {
-  width: calc(150 * (100vw / 1920));
-  height: calc(150 * (100vw / 1920));
+  width: calc(160 * (100vw / 1920));
+  height: calc(160 * (100vw / 1920));
   background-image: url(../../assets/images/arm.png);
   background-repeat: no-repeat;
   background-size: contain;
 	position: absolute; /* JSで操作しやすく */
-	top: 12%;
-  left: 57%;
+	top: 4%;
+  left: 61%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
 	transition: all 0.5s ease; /* 移動をスムーズに */
 
   @media (max-width: 767px) {
-    width: calc(100 * (100vw / 375));
-    height: calc(100 * (100vw / 375));
+    width: calc(110 * (100vw / 375));
+    height: calc(110 * (100vw / 375));
   }
 }
 
 #arm::after {
   content: "";
   position: absolute;
-  top: 6%;
+  top: 7%;
   left: 20%;
   width: 0;
-  height: .2rem;
-  background: #333;
+  height: calc(2 * (100vw / 1920));
+  background: #a1a1a1;
   transform: translateY(-50%) rotate(90deg);
   transition: width 0.3s ease;
   transform-origin: left;
 }
 
 .arm--line::after {
-  width: 6rem !important; /* 伸びる長さはここで調整 */
+  width: calc(100 * (100vw / 1920)) !important; /* 伸びる長さはここで調整 */
 }

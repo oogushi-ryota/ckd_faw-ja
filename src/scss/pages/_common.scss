@@ -68,6 +68,7 @@
 // テキストや画像が入ったボタンのアニメーション
 .common__content-link-btn__wrap{
   position: relative;
+
   // テキストや画像が入ったボタンのアニメーションの背景
   &::before{
     content: "";
@@ -82,16 +83,23 @@
     transition-duration: 0.2s;
     border: 2px solid #000;
   }
+
   &:hover{
     .common__content-link-btn{
       transform: translate(0.8rem , 0.8rem);
     }
+
     &::before{
       background: transparent;
       border: 2px solid transparent;
     }
   }
+
+  &.no-hover {
+    pointer-events: none;
+  }
 }
+
 .common__content-link-btn{
   transition-duration: 0.3s;
 }

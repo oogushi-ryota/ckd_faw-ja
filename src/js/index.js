@@ -21,6 +21,7 @@ $(function () {
       $("meta[name='viewport']").attr('content', 'width=1400');
    }
 });
+
 $(function () {
   var winScrollTop;
   $('.common__js_modal_open').each(function () {
@@ -67,7 +68,14 @@ $(function () {
     $('.common__js_modal').fadeOut();
     $(".common__movie-play-tumb").show();
     $(".common__movie-wrap").removeClass('show');
-    $(".common__js_modal video").attr("src", "");
+
+    // YouTube iframeを停止させるため、srcをリセット
+    $(".common__js_modal iframe").each(function() {
+      var src = $(this).attr("src");
+      $(this).attr("src", "");   // 一旦空にする
+      $(this).attr("src", src);  // 元のsrcを再セットしてリロード
+    });
+
     $('body,html').stop().animate({ scrollTop: winScrollTop }, 100);
     return false;
   });
@@ -87,6 +95,7 @@ $(function () {
 		}
 	});
 });
+
 $(function () {
   // gnav
   var navToggle = $('#nav-toggle'),
@@ -156,6 +165,11 @@ function updateLinkUrls() {
   var links = [
     {
       id: 'downloadLink', 
+      mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/1078/',
+      desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/1078/'
+    },
+    {
+      id: 'downloadLink02', 
       mobileUrl: 'https://www.ckd.co.jp/kiki/jp/sp/product/detail/1078/',
       desktopUrl: 'https://www.ckd.co.jp/kiki/jp/product/detail/1078/'
     },
@@ -241,7 +255,7 @@ const triggers = document.querySelectorAll('.main-visual__animation-trigger');
 const arm = document.getElementById('arm');
 const armwrap = document.querySelector('.armwrap');
 
-const initialLeft = '61%';
+const initialLeft = '20%';
 
 // 追加：現在のホバー対象と保留中タイマー
 let currentTrigger = null;

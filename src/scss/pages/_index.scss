@@ -387,7 +387,7 @@
     background-position: 50%;
     position: relative;
     z-index: 2;
-    bottom: 2px;
+    bottom: 0;
 
     @media (max-width: 767px){
       background-position: center center;
@@ -914,7 +914,7 @@
   background-size: contain;
 	position: absolute; /* JSで操作しやすく */
 	top: 4%;
-  left: 61%;
+  left: 20%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
